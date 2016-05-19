@@ -1,0 +1,37 @@
+# ALIASES
+
+alias g="git"
+alias gst="git status"
+alias gco="git checkout"
+alias gd="git diff"
+alias glol="git log --graph --decorate --format=oneline --abbrev-commit"
+alias glola="git log --graph --decorate --format=oneline --abbrev-commit --all"
+
+# up dirs
+alias ..="cd ../"
+
+# dirs
+alias desk="cd ~/Desktop"
+alias src="cd ~/src"
+
+# ls
+# Detect which `ls` flavor is in use
+if ls --color > /dev/null 2>&1; then # GNU `ls`
+  colorflag="--color"
+else # OS X `ls`
+  colorflag="-G"
+fi
+# Always use color output for `ls`
+alias ls="command ls ${colorflag}"
+# List all files colorized in long format
+alias l="ls -l"
+# List all files colorized in long format, including dot files
+alias la="ls -la"
+# List only directories
+alias lsd='ls -l ${colorflag} | grep "^d"'
+
+# quickly reload .bashrc
+alias reload="source ~/.bashrc"
+
+# Good Morning
+alias morning="brew update && npm update -g --silent"
